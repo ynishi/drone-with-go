@@ -1,4 +1,5 @@
-build:
+pipeline:
+ build:
   image: golang:1.5
   environment:
     - GO15VENDOREXPERIMENT=1
@@ -6,7 +7,7 @@ build:
   commands:
     - go test -cover -coverprofile coverage.out
 
-publish:
+ publish:
   coverage:
     when:
       branch: master
